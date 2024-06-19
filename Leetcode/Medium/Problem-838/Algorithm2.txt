@@ -1,0 +1,44 @@
+Algorithm pushDominoes(dominoes){
+	left:=0;
+	right:=0;
+	
+	while right<dominoes.length do{
+		if dominoes[left]=='R' && dominoes[right]=='L' then{
+			dominoes:=change(dominoes,left+1,left+(right-left+1)/2,'R');
+			
+			dominoes:=change(dominoes,ceil((right-left+1)/2),right,'L');
+
+			left:=right+1;
+		}
+		else if dominoes[left]==dominoes[right] && (dominoes[left]=='R' || dominoes[right]=='L') then{
+			dominoes:=change(dominoes,left+1,right,dominoes[left]);
+			
+			left:=right+1;
+		}
+		else{
+			if dominoes[right]=='R' then
+				left:=right;
+
+			if dominoes[right]=='L' then{
+				dominoes:=change(dominoes,left,right,dominoes[right]);
+				
+				left:=right+1;
+			}
+		}
+
+		right++;
+	}
+
+	if(dominoes[left]=='R')
+		dominoes:=change(dominoes,left+1,right,dominoes[left]);
+
+	return dominoes;
+}
+
+Algorithm change(arr,start,end,val){
+	for i:=start to end-1 do{
+		arr[i]:=val;
+	}
+
+	return arr;
+}

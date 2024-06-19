@@ -1,0 +1,27 @@
+// "pes","pes(2)","pes(1)","pes","pes(3)","pes(2)"
+
+// complexity: O(n^2)
+
+Algorithm getFolderNames(names){
+	//HashSet table:=NULL
+	result:=NULL;
+	freq:=0;
+	
+	for name in names do{
+		if table.contains(name) then{
+			freq++;
+
+			while table.contains(name+"("+freq+")")do{
+				freq++;
+			}
+
+			name=name+"("+str(freq)+")";
+		}
+
+		freq:=0;
+		result.add(name);
+		table.add(name);
+	}
+
+	return result;
+}

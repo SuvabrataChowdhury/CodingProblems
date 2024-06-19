@@ -1,0 +1,22 @@
+Algorithm kLengthApart(nums,k){
+	flag:=False; //Indicates whether 1 has been encountered or not
+	dis:=0;
+
+	for each num in nums do{
+		if num==1 then{
+			if !flag then //1 have not been encountered
+				flag:=True;
+			else{	//1 have been encountered
+				if dis<k then
+					return False;
+				else
+					dis:=0;
+			}
+		}
+		else{
+			dis++;
+		}
+	}
+
+	return True;
+}

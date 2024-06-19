@@ -1,0 +1,15 @@
+Algorithm findMaxK(nums){
+	Declare table as a HashSet;
+	Store all values of nums in table;
+
+	max:=-1;
+
+	for num in nums do{
+		if table contains (-1)*num the{
+			if abs(num) > max then
+				max=abs(num);
+		}
+	}
+
+	return max;
+}

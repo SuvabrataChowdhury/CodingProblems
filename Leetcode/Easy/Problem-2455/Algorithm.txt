@@ -1,0 +1,16 @@
+Algorithm averageValue(nums){
+	sum:=0;
+	count:=0;
+
+	for num in nums do{
+		if num % 6 == 0 then{
+			sum:=sum+num;
+			count++;
+		}
+	}
+
+	if count>0 then
+		return sum//count;
+	else
+		return sum;
+}

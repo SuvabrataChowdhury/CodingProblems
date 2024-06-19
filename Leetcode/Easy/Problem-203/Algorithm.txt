@@ -1,0 +1,34 @@
+Algorithm removeElements(head,val){
+	ptr:=head;
+
+	while ptr!=NULL do{
+		if ptr->val=val then
+			ptr:=ptr->next;
+		else
+			break;
+	}
+
+	head:=ptr;
+	prePtr:=ptr;
+
+	if ptr!=NULL then{
+		ptr:=ptr->next;
+
+		while ptr!=NULL do{
+			if ptr->val=val then
+				prePtr->next:=ptr->next;
+			else
+				prePtr:=ptr;
+
+			ptr:=ptr->next;
+		}
+
+	}
+
+	return head;
+}
+
+// head:= [1,2,6,3,4,5,6]
+// val:= 6
+// prePtr:= 3
+// ptr:= 4

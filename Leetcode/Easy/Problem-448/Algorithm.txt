@@ -1,0 +1,12 @@
+Algorithm findDisappearedNumbers(nums){
+	table:=NULL; //hashSet
+	
+	for i:=1 to nums.length do
+		table.add(i);
+	
+	for each num in nums do{
+		table.remove(num);
+	}
+
+	return table;
+}

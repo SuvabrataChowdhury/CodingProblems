@@ -1,0 +1,21 @@
+Algorithm hasAlternatingBits(n){
+	preBit:=n%2;
+	n/=2;
+
+	while n!=0 do{
+		bit:=n%2;
+
+		if bit==preBit then
+			return False;
+		
+		n/=2;
+		preBit:=bit;
+	}
+
+	return True;
+}
+
+// n=7 Expected Output= False
+// preBit= 1
+// n= 3
+// bit= 1

@@ -1,0 +1,30 @@
+Algorithm constructRectangle(area){
+	length:=area;
+	width:=1;
+
+	result:={length,width};
+	fact:=2;
+
+	while fact<sqrt(area) do{
+		if area%fact==0 then{
+			length=area/fact;
+			width=fact;
+
+			if length<width then
+				break;
+		}
+		
+		fact++;
+
+		result[0]:=length;
+		result[1]:=width;
+	}
+
+	return result;
+}
+
+// area=120
+// length=12
+// width=10
+// fact=10
+// result={12,10}
